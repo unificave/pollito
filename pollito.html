@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pollito con Naranja</title>
+<style>
+/* Layout: una sola escena centrada — bocadillo arriba, pollito pixelado debajo — sobre degradado naranja. Tema único. */
+@font-face {
+  font-family: "Monocraft";
+  src: url(data:font/woff2;base64,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) format("woff2");
+  font-display: block;
+}
+:root {
+  --bg-top: #ffb648;
+  --bg-mid: #ff8a33;
+  --bg-bottom: #f2602e;
+  --ink: #4a2a12;
+  --bubble: #fff6e6;
+  --heart: #e8344e;
+  --f: "Monocraft", "Courier New", monospace;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  min-height: 100%;
+  background: linear-gradient(170deg, var(--bg-top) 0%, var(--bg-mid) 50%, var(--bg-bottom) 100%) fixed, var(--bg-mid);
+  color: var(--ink);
+  font-family: var(--f);
+  padding: 24px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-x: hidden;
+}
+button { font-family: var(--f); }
+
+.stage { width: 100%; max-width: 380px; display: flex; flex-direction: column; align-items: center; gap: 18px; position: relative; }
+
+/* Bocadillo con esquinas pixeladas */
+.bubble-slot { width: 100%; height: 9.2em; display: flex; align-items: flex-end; font-size: 19px; }
+.bubble {
+  position: relative; width: 100%;
+  background: var(--bubble);
+  padding: 14px 16px;
+  line-height: 1.45;
+  box-shadow: 0 -4px 0 var(--ink), 0 4px 0 var(--ink), -4px 0 0 var(--ink), 4px 0 0 var(--ink), 8px 8px 0 rgba(74,42,18,.25);
+  overflow-wrap: anywhere;
+}
+.bubble::after {
+  content: ""; position: absolute; left: 50%; bottom: -16px; width: 12px; height: 12px; margin-left: -6px;
+  background: var(--bubble);
+  box-shadow: 4px 0 0 var(--ink), -4px 0 0 var(--ink), 0 4px 0 var(--ink);
+}
+.bubble p { margin: 0; min-height: 1.45em; }
+.caret { display: inline-block; width: .5em; animation: blink 1s steps(1) infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+
+/* Pollito */
+.chick-wrap { position: relative; }
+.chick {
+  display: block; padding: 0; border: 0; background: none; cursor: pointer;
+  width: min(62vw, 270px);
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none; user-select: none;
+}
+.chick:focus-visible { outline: 4px dashed var(--ink); outline-offset: 6px; }
+.chick canvas, .chick img { display: block; width: 100%; height: auto; image-rendering: pixelated; image-rendering: crisp-edges; }
+.chick.idle { animation: bob 1.1s steps(2) infinite; }
+.chick.hop { animation: hop .28s steps(3); }
+@keyframes bob { 50% { transform: translateY(-5px); } }
+@keyframes hop { 50% { transform: translateY(-16px); } }
+
+.num {
+  position: absolute; top: 48%; font-size: 34px; font-weight: 700; color: var(--bubble);
+  text-shadow: 3px 3px 0 var(--ink); pointer-events: none;
+}
+.num.l { left: -8%; }
+.num.r { right: -8%; }
+
+.hint { font-size: 14px; opacity: .75; margin: 0; }
+.mute {
+  position: fixed; top: calc(12px + env(safe-area-inset-top, 0px)); right: 12px;
+  font-size: 13px; color: var(--ink); background: var(--bubble); border: 0; padding: 6px 10px; cursor: pointer;
+  box-shadow: 0 -3px 0 var(--ink), 0 3px 0 var(--ink), -3px 0 0 var(--ink), 3px 0 0 var(--ink);
+}
+.mute:focus-visible { outline: 3px dashed var(--ink); outline-offset: 4px; }
+
+.heart { position: absolute; font-size: 26px; color: var(--heart); text-shadow: 2px 2px 0 var(--ink); pointer-events: none; animation: rise 1.4s steps(8) forwards; }
+@keyframes rise { to { transform: translateY(-120px); opacity: 0; } }
+
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+@media (max-width: 400px) { .bubble-slot { font-size: 17px; height: 10em; } }
+@media (prefers-reduced-motion: reduce) {
+  .chick.idle, .chick.hop, .caret { animation: none; }
+  .heart { display: none; }
+}
+</style>
+</head>
+<body>
+
+<button class="mute" id="mute" type="button" aria-pressed="false">sonido: sí</button>
+
+<main class="stage">
+  <div class="bubble-slot">
+    <div class="bubble"><p><span id="text">hazme clic</span><span class="caret" id="caret">▾</span></p></div>
+  </div>
+  <div class="chick-wrap">
+    <button class="chick idle" id="chick" type="button" aria-label="Pollito con una naranja en la cabeza. Hazle clic.">
+      <img id="still" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAmCAYAAACsyDmTAAACmUlEQVR4AdyVK2wUURSGzxIEBgGKhAYPG0KCQCAIIBAdTTXhYUoweBS+BhyBIFCgtyFIgiAVTSr6cE2T6lbU1G3nm90zPXPn7tzH7qZNm/07557Hf765bdpLcs6+LjbQvQ/3h2iaS5/ZDb1dvDW8+/SGoGmgZgK0eOf6kFv58WS1hzY+rvc45ygbCAjV4MVV+fy4J3rmmQPDTBaQLgQEYYSIEbH2EKcoGUgXVYsfvRFBzsaqVua0twyjP8lAOOtCYvn7pXq43xo9brHjnAVU+02AqesZwXRAHQv3dg47qpNLcwHKhQEzC6j4fsSsVwqz/P+ytx5KJgOtbh1Uf/RcKEAQCxVGe8nFKhnIGgOFLIjC2L6UOAmIvyto8PO2WAGBbI6YXjQXIDVmkbuAHPLlyekscUhRN4QhC1HI0K0zg/Bwa75zEAgjDH3DKTk88ArNBIFCBrOue4F4ExVv1lra/yf9Z5utdCPh6cFLfXk2+seHFpA2/lpZGLe0H/2b19pJJ9PVo966y462gCjqAPG8NGmHFygEsfmnL6jq+70rYlUlparXPeNczKMBxBVOIpe1V1JJXRfeiaDXK5oRISaHTrOjOeZtrozZxc4yrD8NoDrrCx58FUHU3IWAIGoq28Mc0lrHswHEP8Pn7/c72suSXVQeOz+BXnax03o0gGzhrGIvEOQA8TMulrYJRwq88ajJ+W5miqVtwZMO3UFs1QLSK2QA2WbZ/9Q4Rh2cGTwRs7qLWNUCokCjFW9GfhrhYT2JfX5eILeRYQxR0i2Vt8MMwsP19Z2jgBhUQ8yjoMYwdpY4pGggjCxU8XBZOlX+AtsZ4hglAanh4OUVUZEDFBFrnifnVGUBpS5J6b8YQMW3Y1G5b695nm4t5nwCAAD//5QIuFkAAAAGSURBVAMAFkMvjqnQxv4AAAAASUVORK5CYII=" alt="" width="36" height="38"><canvas id="cv" width="36" height="38" hidden></canvas>
+    </button>
+    <span class="num l" id="n6" hidden>6</span>
+    <span class="num r" id="n7" hidden>7</span>
+  </div>
+  <p class="hint" id="hint">♥</p>
+  <p class="sr" aria-live="polite" id="live"></p>
+  <noscript><p class="hint" style="opacity:1;text-align:center">Para que el pollito hable, abre este archivo en Safari o Chrome.</p></noscript>
+</main>
+
+<script>
+const FRASES = [
+  "te quiero mucho",
+  "te quiero (7.5)",
+  "eres mi princesa",
+  "hola flaca",
+  "hola beby",
+  "55",
+  "nasti",
+  "ay ay ay, si te pillara",
+  "que color de panty tienes hoy",
+  "michiripita",
+  "maldita mujer",
+  "no te voy a decir nada, vale",
+  "te puedo robar un beso?",
+  "me gustas mucho",
+  "hola",
+  "carita fachera facherita :v",
+  "quien eres, soy valentina",
+  "una vez eliminado el senado, venezuela pasa a ser un sistema bicameral o unicameral?",
+  "emily, vete a tu casa",
+  "te quiero como a una hermanita",
+  "te hice dátiles",
+  "“no podrías dejar de gustarme ni aunque quisiera”, wow",
+  "no temas chuky... acercate...",
+  "te dedico este 6-7",
+  "tequeño mucho",
+  "yaaa chuky",
+  "quiero noges",
+  "te quiero michi",
+  "solo quiero que seas feliz",
+  "um selfiri fazendo bá",
+  "todo irá bien",
+  "cuando es mi cumple?",
+  "que paso el 28 de julio de 2026?"
+];
+const CON_CORAZONES = /quiero|gustas|beso|princesa|feliz|tequeño|28 de julio/;
+
+const $ = id => document.getElementById(id);
+const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+/* ---------- Pollito en pixel art ---------- */
+const W = 36, H = 38;
+const C = {
+  line: "#4a2a12", body: "#ffd43b", belly: "#fff0a8", wing: "#f5b82e",
+  foot: "#ff8c1a", orange: "#ff8a1f", orangeShade: "#e0620e", orangeHi: "#ffc884",
+  leaf: "#5cbf4a", leafDk: "#2f7d32", stem: "#6b4a1e",
+  eye: "#2a1a10", white: "#ffffff", cheek: "#ff9e9e", mouth: "#8a2a1a"
+};
+const st = { blink: false, mouth: false, wl: 0, wr: 0 };
+const g = $("cv").getContext("2d");
+
+function draw() {
+  const px = Array.from({ length: H }, () => new Array(W).fill(null));
+  const set = (x, y, c) => { if (y >= 0 && y < H && x >= 0 && x < W) px[y][x] = c; };
+  const ell = (cx, cy, rx, ry, c, test) => {
+    for (let y = 0; y < H; y++) for (let x = 0; x < W; x++) {
+      const dx = (x + .5 - cx) / rx, dy = (y + .5 - cy) / ry;
+      if (dx * dx + dy * dy <= 1 && (!test || test(x, y))) px[y][x] = c;
+    }
+  };
+  const oell = (cx, cy, rx, ry, c) => { ell(cx, cy, rx + 1, ry + 1, C.line); ell(cx, cy, rx, ry, c); };
+  const rect = (x0, y0, w, h, c) => { for (let y = y0; y < y0 + h; y++) for (let x = x0; x < x0 + w; x++) set(x, y, c); };
+
+  // patitas
+  rect(12, 32, 5, 6, C.line); rect(13, 33, 3, 4, C.foot);
+  rect(19, 32, 5, 6, C.line); rect(20, 33, 3, 4, C.foot);
+  // alas
+  oell(7, 25 + st.wl, 2.6, 4, C.wing);
+  oell(29, 25 + st.wr, 2.6, 4, C.wing);
+  // cuerpo y barriga
+  oell(18, 24, 10.5, 9.5, C.body);
+  ell(18, 28.5, 6.5, 4.8, C.belly);
+  // naranja en la cabeza
+  oell(18, 10, 5.2, 4.6, C.orange);
+  ell(18, 10, 5.2, 4.6, C.orangeShade, (x, y) => (x - 18) + (y - 10) * 1.2 > 3.5);
+  set(15, 7, C.orangeHi); set(16, 7, C.orangeHi); set(15, 8, C.orangeHi);
+  set(18, 4, C.stem); set(18, 3, C.stem);
+  set(19, 3, C.leaf); set(20, 3, C.leaf); set(21, 3, C.leafDk);
+  set(19, 2, C.leafDk); set(20, 2, C.leafDk);
+  // ojos
+  for (const ex of [13, 22]) {
+    if (st.blink) { rect(ex - 1, 22, 4, 1, C.eye); }
+    else { rect(ex, 20, 2, 3, C.eye); set(ex, 20, C.white); }
+  }
+  // mofletes
+  rect(10, 24, 2, 1, C.cheek); rect(25, 24, 2, 1, C.cheek);
+  // pico
+  rect(16, 23, 4, 1, C.foot);
+  if (st.mouth) { rect(17, 24, 2, 1, C.mouth); rect(17, 25, 2, 1, C.foot); }
+  else { rect(17, 24, 2, 1, C.foot); }
+
+  g.clearRect(0, 0, W, H);
+  for (let y = 0; y < H; y++) for (let x = 0; x < W; x++) {
+    if (px[y][x]) { g.fillStyle = px[y][x]; g.fillRect(x, y, 1, 1); }
+  }
+}
+draw();
+$("still").hidden = true;
+$("cv").hidden = false;
+
+// parpadeo
+(function blinkLoop() {
+  setTimeout(() => {
+    st.blink = true; draw();
+    setTimeout(() => { st.blink = false; draw(); blinkLoop(); }, 140);
+  }, 2200 + Math.random() * 2500);
+})();
+
+/* ---------- Voz tipo balbuceo ---------- */
+let ac = null, master = null, muted = false;
+function audio() {
+  if (!ac) {
+    const AC = window.AudioContext || window.webkitAudioContext;
+    if (!AC) return null;
+    ac = new AC();
+    master = ac.createGain(); master.gain.value = 0.22; master.connect(ac.destination);
+  }
+  if (ac.state === "suspended") ac.resume();
+  desbloquearIOS();
+  return ac;
+}
+// En iPhone, el interruptor de silencio apaga este tipo de audio.
+// Esto le pide al sistema que lo trate como reproducción normal.
+let iosListo = false;
+function desbloquearIOS() {
+  if (iosListo) return;
+  iosListo = true;
+  try { if (navigator.audioSession) navigator.audioSession.type = "playback"; } catch (e) {}
+  try {
+    const sr = 8000, n = 800, buf = new ArrayBuffer(44 + n), v = new DataView(buf);
+    const w = (o, s) => [...s].forEach((c, i) => v.setUint8(o + i, c.charCodeAt(0)));
+    w(0, "RIFF"); v.setUint32(4, 36 + n, true); w(8, "WAVE"); w(12, "fmt ");
+    v.setUint32(16, 16, true); v.setUint16(20, 1, true); v.setUint16(22, 1, true);
+    v.setUint32(24, sr, true); v.setUint32(28, sr, true); v.setUint16(32, 1, true); v.setUint16(34, 8, true);
+    w(36, "data"); v.setUint32(40, n, true);
+    for (let i = 0; i < n; i++) v.setUint8(44 + i, 128);
+    const a = new Audio(URL.createObjectURL(new Blob([buf], { type: "audio/wav" })));
+    a.loop = true; a.setAttribute("playsinline", "");
+    const p = a.play(); if (p && p.catch) p.catch(() => {});
+  } catch (e) {}
+}
+const FORMANTES = {
+  a: [800, 1250], e: [500, 1900], i: [320, 2400], o: [520, 900], u: [340, 800],
+  "á": [800, 1250], "é": [500, 1900], "í": [320, 2400], "ó": [520, 900], "ú": [340, 800]
+};
+function blip(ch) {
+  if (muted || !ac) return;
+  const t = ac.currentTime;
+  const k = ch.toLowerCase();
+  const code = k.charCodeAt(0);
+  const vocal = FORMANTES[k];
+  const f0 = 560 * Math.pow(2, ((code % 9) - 4) / 18) * (0.96 + Math.random() * 0.08);
+  const dur = vocal ? 0.075 : 0.05;
+
+  const o = ac.createOscillator();
+  o.type = "sawtooth";
+  o.frequency.setValueAtTime(f0 * 1.12, t);
+  o.frequency.exponentialRampToValueAtTime(f0, t + dur * 0.7);
+
+  const env = ac.createGain();
+  env.gain.setValueAtTime(0.0001, t);
+  env.gain.exponentialRampToValueAtTime(1, t + 0.008);
+  env.gain.exponentialRampToValueAtTime(0.0001, t + dur);
+
+  const [f1, f2] = vocal || [700 + (code % 5) * 220, 1700 + (code % 7) * 150];
+  for (const [f, q, v] of [[f1, 6, 1], [f2, 9, 0.6]]) {
+    const bp = ac.createBiquadFilter(); bp.type = "bandpass"; bp.frequency.value = f; bp.Q.value = q;
+    const gv = ac.createGain(); gv.gain.value = v;
+    o.connect(bp).connect(gv).connect(env);
+  }
+  env.connect(master);
+  o.start(t); o.stop(t + dur + 0.02);
+}
+
+/* ---------- Escribir la frase ---------- */
+let typing = null, fullText = "hazme clic";
+function say(text) {
+  clearTimeout(typing);
+  fullText = text;
+  $("live").textContent = text;
+  $("caret").hidden = true;
+  const el = $("text");
+  el.textContent = "";
+  let i = 0;
+  const step = () => {
+    if (i >= text.length) {
+      st.mouth = false; draw();
+      $("caret").hidden = false;
+      typing = null;
+      return;
+    }
+    const ch = text[i++];
+    el.textContent += ch;
+    let wait = 52;
+    if (/[a-záéíóúñ0-9]/i.test(ch)) { blip(ch); st.mouth = !st.mouth; draw(); }
+    else if (ch === " ") { wait = 40; }
+    else if (/[,.?!…:]/.test(ch)) { wait = 160; st.mouth = false; draw(); }
+    typing = setTimeout(step, wait);
+  };
+  step();
+}
+function finishNow() {
+  clearTimeout(typing); typing = null;
+  $("text").textContent = fullText;
+  st.mouth = false; draw();
+  $("caret").hidden = false;
+}
+
+/* ---------- Frases al azar sin repetir ---------- */
+let bolsa = [], ultima = null;
+function siguiente() {
+  if (!bolsa.length) {
+    bolsa = FRASES.slice();
+    for (let i = bolsa.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [bolsa[i], bolsa[j]] = [bolsa[j], bolsa[i]];
+    }
+    if (bolsa[bolsa.length - 1] === ultima) bolsa.unshift(bolsa.pop());
+  }
+  ultima = bolsa.pop();
+  return ultima;
+}
+
+/* ---------- 6-7 con las alas ---------- */
+let sixTimer = null;
+function seisSiete() {
+  clearInterval(sixTimer);
+  const n6 = $("n6"), n7 = $("n7");
+  n6.hidden = n7.hidden = false;
+  let k = 0;
+  sixTimer = setInterval(() => {
+    const up = k % 2 === 0;
+    st.wl = up ? -5 : 1; st.wr = up ? 1 : -5;
+    n6.style.transform = `translateY(${up ? -18 : 6}px)`;
+    n7.style.transform = `translateY(${up ? 6 : -18}px)`;
+    draw();
+    if (++k > 13) {
+      clearInterval(sixTimer);
+      st.wl = st.wr = 0; draw();
+      n6.hidden = n7.hidden = true;
+    }
+  }, 210);
+}
+function pararSeisSiete() {
+  clearInterval(sixTimer);
+  st.wl = st.wr = 0;
+  $("n6").hidden = $("n7").hidden = true;
+}
+
+/* ---------- Corazones ---------- */
+function corazones() {
+  if (reduce) return;
+  const wrap = document.querySelector(".chick-wrap");
+  for (let i = 0; i < 5; i++) {
+    const h = document.createElement("span");
+    h.className = "heart"; h.textContent = "♥";
+    h.style.left = (15 + Math.random() * 70) + "%";
+    h.style.top = (10 + Math.random() * 30) + "%";
+    h.style.animationDelay = (i * 0.12) + "s";
+    wrap.appendChild(h);
+    setTimeout(() => h.remove(), 2200);
+  }
+}
+
+/* ---------- Clic ---------- */
+const chick = $("chick");
+let clics = 0;
+chick.addEventListener("click", () => {
+  audio();
+  if (typing) { finishNow(); return; }
+  clics++;
+  $("hint").textContent = clics === 1 ? "sigue haciéndome clic" : "♥ " + clics;
+  if (!reduce) {
+    chick.classList.remove("idle", "hop"); void chick.offsetWidth; chick.classList.add("hop");
+  }
+  pararSeisSiete();
+  const frase = siguiente();
+  say(frase);
+  if (frase.includes("6-7")) seisSiete();
+  if (CON_CORAZONES.test(frase)) corazones();
+});
+chick.addEventListener("animationend", e => {
+  if (e.animationName === "hop") { chick.classList.remove("hop"); chick.classList.add("idle"); }
+});
+
+$("mute").addEventListener("click", () => {
+  muted = !muted;
+  $("mute").textContent = muted ? "sonido: no" : "sonido: sí";
+  $("mute").setAttribute("aria-pressed", String(muted));
+});
+</script>
+
+</body>
+</html>
